@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Grain</string>  <!-- The app's name -->
+    <string name="team_name">Matviran</string>  <!-- The team's name -->
+</resources>
