@@ -25,7 +25,7 @@ class AuthService {
   }
 
   // Login user
-  Future<String> loginUser(String email, String password) async {
+  Future<Map<String, String>> loginUser(String email, String password) async {
     final response = await http.post(
       Uri.parse(apiUrl),
       body: {
@@ -38,9 +38,14 @@ class AuthService {
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
       if (data['message'] == "Login successful!") {
-        return "Login successful";
+        return {
+          "message": "Login successful",
+          "name": data['user']['name'],
+        };
       } else {
-        return "Invalid credentials";
+        return {
+          "message": "Invalid credentials",
+        };
       }
     } else {
       throw Exception('Failed to login user');
