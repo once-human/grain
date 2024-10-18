@@ -1,4 +1,4 @@
-package com.matviran.grain
+package com.matviran.grains
 
 import io.flutter.embedding.android.FlutterActivity
 
